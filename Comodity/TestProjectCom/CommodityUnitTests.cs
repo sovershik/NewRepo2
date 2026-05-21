@@ -39,9 +39,9 @@ namespace Commodity.UnitTest
 
         }
 
-        private Commodity CreateTestPerson()
+        private CommodityClass CreateTestPerson()
         {
-            return new Commodity(CommodityArticle.Art1, "яблоко", 20, 1, 1, 1, new DateTime(2020, 1, 1), 1000, PackageCharacteristic.common, 100);
+            return new CommodityClass(CommodityArticle.Art1, "яблоко", 20, 1, 1, 1, new DateTime(2020, 1, 1), 1000, PackageCharacteristic.common, 100);
         }
     }
 }

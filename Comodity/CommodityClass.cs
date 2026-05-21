@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Commodity
 {
-    public class Commodity
+    public class CommodityClass : IComparable<CommodityClass>
     {
         public readonly CommodityArticle Article; //артикул, из списка
         public string Name { get; set; } //наименование товара, строка
@@ -23,7 +23,7 @@ namespace Commodity
 
 
 
-        public Commodity(
+        public CommodityClass(
             CommodityArticle article,
             string name,
             double weight,
@@ -41,12 +41,20 @@ namespace Commodity
             Weight = weight;
             Length = length;
             Width = widh;
-            Height = widh;
+            Height = height;
             ArrivalDate = arrivalDate;
             Price = price;
             Characteristic = characteristic;
             MaxStack = maxstack;
         }
+
+
+        public int CompareTo(CommodityClass other)
+        {
+            if (other == null) return 1;
+            return string.Compare(Name, other.Name, StringComparison.CurrentCulture);
+        }
+
 
         public virtual string[] GetInfo()
         {
